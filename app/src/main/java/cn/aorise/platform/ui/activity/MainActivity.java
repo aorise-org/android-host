@@ -90,10 +90,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_education:
                 RePlugin.startActivity(MainActivity.this,
-                        RePlugin.createIntent("demo1", "com.qihoo360.replugin.sample.demo1.MainActivity"));
-                //openActivity(cn.aorise.education.ui.activity.MainActivity.class);
+                        RePlugin.createIntent("aorise", "com.example.jayatang.myapplication.MainActivity"));;
                 break;
             case R.id.btn_hospital:
+                RePlugin.startActivity(MainActivity.this,
+                        RePlugin.createIntent("demo1", "com.qihoo360.replugin.sample.demo1.MainActivity"));
                 //openActivity(cn.aorise.hospital.ui.activity.MainActivity.class);
                 break;
             case R.id.btn_petition:
@@ -103,7 +104,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 //openActivity(NetListV2Activity.class);
                 break;
             case R.id.btn_other:
-                // openActivity(cn.aorise.sample.ui.activity.MainActivity.class);
+                RePlugin.startActivity(MainActivity.this,
+                        RePlugin.createIntent("sample", "cn.aorise.plugin.ui.activity.MainActivity"));
                 break;
             default:
                 break;
