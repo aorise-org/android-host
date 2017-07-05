@@ -1,9 +1,10 @@
-# Created by .ignore support plugin (hsz.mobi)
-.gradle/
-.idea/workspace.xml
-app/app.iml
-app/build/
-app/src/main/java/com/qihoo360/replugin/sample/
-build/
-local.properties
-app/src/main/java/com/
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+/keystore
+.externalNativeBuild
