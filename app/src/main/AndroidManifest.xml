@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.aorise.platform">
+
+    <!-- ======= REPLUGIN ======= -->
+    <!-- SDK Only (4Stats)。也是“常用的”几个权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- ======================== -->
+
+    <application
+        android:name=".PlatformApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <!-- Umeng start -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${UMENG_APPKEY_VALUE}" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${CHANNEL_VALUE}" />
+        <!-- Umeng end -->
+
+        <!-- 登录后跳转的首页 start-->
+        <meta-data
+            android:name="PACKAGE_NAME_KEY"
+            android:value="${PACKAGE_NAME_VALUE}" />
+        <meta-data
+            android:name="LOGIN_CLASS_NAME_KEY"
+            android:value="${LOGIN_CLASS_NAME_VALUE}" />
+        <!-- 登录后跳转的首页 end-->
+
+        <!-- 公共启动页 start-->
+        <activity
+            android:name="cn.aorise.common.component.login.AoriseSplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cn.aorise.common.component.login.AoriseLoginActivity"
+            android:label="@string/aorise_component_title_activity_login" />
+        <!-- 公共启动页 end-->
+
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:label="@string/platform_title_activity_main" />
+    </application>
+
+</manifest>
