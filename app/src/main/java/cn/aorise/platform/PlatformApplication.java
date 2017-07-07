@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 
 import com.qihoo360.replugin.RePlugin;
+import com.qihoo360.replugin.RePluginConfig;
 
 /**
  * @author RePlugin Team
@@ -32,7 +33,11 @@ public class PlatformApplication extends Application {
         super.attachBaseContext(base);
 
         // ======= REPLUGIN =======
-        RePlugin.App.attachBaseContext(this);
+        RePlugin.App.attachBaseContext(this,
+                new RePluginConfig()
+                        .setUseHostClassIfNotFound(true)    //开启插件使用宿主的类
+                        .setVerifySign(!BuildConfig.DEBUG)  //关闭签名校验
+        );
         // ========================
     }
 
@@ -42,6 +47,7 @@ public class PlatformApplication extends Application {
 
         // ======= REPLUGIN =======
         RePlugin.App.onCreate();
+        RePlugin.enableDebugger(this, BuildConfig.DEBUG);
         // ========================
     }
 

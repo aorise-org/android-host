@@ -15,7 +15,7 @@
  */
 buildscript {
     repositories {
-        mavenLocal()
+        // mavenLocal()
         jcenter()
     }
     dependencies {
@@ -26,7 +26,7 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
+        // mavenLocal()
         jcenter()
         maven {
             url "https://raw.githubusercontent.com/aorise-org/maven-snapshots/master"

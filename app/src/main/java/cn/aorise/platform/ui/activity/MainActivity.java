@@ -90,7 +90,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_education:
                 RePlugin.startActivity(MainActivity.this,
-                        RePlugin.createIntent("aorise", "com.example.jayatang.myapplication.MainActivity"));;
+                        RePlugin.createIntent("aorise.education", "cn.aorise.plugin.ui.activity.MainActivity"));
                 break;
             case R.id.btn_hospital:
                 RePlugin.startActivity(MainActivity.this,
@@ -101,11 +101,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 // openActivity(cn.aorise.petition.ui.activity.MainActivity.class);
                 break;
             case R.id.btn_security:
-                //openActivity(NetListV2Activity.class);
                 break;
             case R.id.btn_other:
                 RePlugin.startActivity(MainActivity.this,
-                        RePlugin.createIntent("sample", "cn.aorise.plugin.ui.activity.MainActivity"));
+                        RePlugin.createIntent("aorise.sample", "cn.aorise.plugin.ui.activity.MainActivity"));
                 break;
             default:
                 break;
