@@ -20,11 +20,13 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.View;
 
 import com.qihoo360.replugin.RePlugin;
 
+import cn.aorise.common.component.network.entity.response.AccountInfo;
 import cn.aorise.common.core.config.AoriseConstant;
 import cn.aorise.common.core.manager.ActivityManager;
 import cn.aorise.common.core.ui.base.BaseActivity;
@@ -87,6 +89,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Intent intent = null;
+
         switch (v.getId()) {
             case R.id.btn_education:
                 RePlugin.startActivity(MainActivity.this,
@@ -101,8 +105,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn_security:
                 break;
             case R.id.btn_other:
-                RePlugin.startActivity(MainActivity.this,
-                        RePlugin.createIntent("aorise.sample", "cn.aorise.sample.ui.activity.MainActivity"));
+                intent = RePlugin.createIntent("aorise.sample", "cn.aorise.sample.ui.activity.MainActivity");
+                intent.putExtra(AoriseConstant.TransportKey.INTENT_KEY, getAccountInfo());
+                RePlugin.startActivity(MainActivity.this, intent);
                 break;
             default:
                 break;
@@ -123,5 +128,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @NonNull
+    private AccountInfo getAccountInfo() {
+        AccountInfo accountInfo = new AccountInfo();
+        accountInfo.setAccount("test-account");
+        accountInfo.setId("123456789");
+        accountInfo.setSex("male");
+        return accountInfo;
     }
 }
