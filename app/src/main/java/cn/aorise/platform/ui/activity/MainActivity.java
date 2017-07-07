@@ -90,21 +90,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_education:
                 RePlugin.startActivity(MainActivity.this,
-                        RePlugin.createIntent("aorise.education", "cn.aorise.plugin.ui.activity.MainActivity"));
+                        RePlugin.createIntent("aorise.education", "cn.aorise.sample.ui.activity.MainActivity"));
                 break;
             case R.id.btn_hospital:
-                RePlugin.startActivity(MainActivity.this,
-                        RePlugin.createIntent("demo1", "com.qihoo360.replugin.sample.demo1.MainActivity"));
-                //openActivity(cn.aorise.hospital.ui.activity.MainActivity.class);
+                //RePlugin.startActivity(MainActivity.this,
+                //        RePlugin.createIntent("demo1", "com.qihoo360.replugin.sample.demo1.MainActivity"));
                 break;
             case R.id.btn_petition:
-                // openActivity(cn.aorise.petition.ui.activity.MainActivity.class);
                 break;
             case R.id.btn_security:
                 break;
             case R.id.btn_other:
                 RePlugin.startActivity(MainActivity.this,
-                        RePlugin.createIntent("aorise.sample", "cn.aorise.plugin.ui.activity.MainActivity"));
+                        RePlugin.createIntent("aorise.sample", "cn.aorise.sample.ui.activity.MainActivity"));
                 break;
             default:
                 break;

@@ -23,6 +23,9 @@ import android.content.res.Configuration;
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.RePluginConfig;
 
+
+
+
 /**
  * @author RePlugin Team
  */
